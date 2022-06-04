@@ -4,8 +4,8 @@
   "private": true,
   "dependencies": {
     "@ar-js-org/ar.js": "^3.4.0",
-    "@artcom/react-three-arjs": "^0.5.0",
-    "@react-three/fiber": "^8.0.22",
+    "@artcom/react-three-arjs": "0.3.4",
+    "@react-three/fiber": "7.0.19",
     "@testing-library/jest-dom": "^5.11.8",
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.6.0",
@@ -21,7 +21,7 @@
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-standard": "^20.0.0",
     "stylelint-prettier": "^1.1.2",
-    "three": "^0.141.0",
+    "three": "0.134.0",
     "underscore": "^1.9.2",
     "web-vitals": "^0.2.4"
   },
