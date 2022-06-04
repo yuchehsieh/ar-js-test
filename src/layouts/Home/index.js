@@ -11,6 +11,7 @@ const Home = () => {
             <Header />
             <ARCanvas
                 camera={{ position: [0, 0, 0] }}
+                dpr={window.devicePixelRatio}
                 onCreated={({ gl }) => {
                     gl.setSize(window.innerWidth, window.innerHeight);
                 }}
