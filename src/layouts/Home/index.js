@@ -3,21 +3,27 @@ import React from 'react';
 import Header from '../../components/Header';
 
 import styles from './styles.module.scss';
+import { ARCanvas, ARMarker } from '@artcom/react-three-arjs';
 
 const Home = () => {
     return (
         <div className={styles.container}>
             <Header />
-            <a-scene embedded arjs>
-                <a-marker preset="hiro">
-                    <a-entity
-                        position="0 0 0"
-                        scale="0.05 0.05 0.05"
-                        gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
-                    ></a-entity>
-                </a-marker>
-                <a-entity camera></a-entity>
-            </a-scene>
+            <ARCanvas
+                camera={{ position: [0, 0, 0] }}
+                onCreated={({ gl }) => {
+                    gl.setSize(window.innerWidth, window.innerHeight);
+                }}
+            >
+                <ambientLight />
+                <pointLight position={[10, 10, 0]} />
+                <ARMarker type={'pattern'} patternUrl={'data/hiro.patt'}>
+                    <mesh>
+                        <boxBufferGeometry args={[1, 1, 1]} />
+                        <meshStandardMaterial color={'green'} />
+                    </mesh>
+                </ARMarker>
+            </ARCanvas>
         </div>
     );
 };
